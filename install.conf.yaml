@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/bspwm: bspwm
+    ~/.config/dunst: dunst
+    ~/.config/gtk-3.0: gtk-3.0
+    ~/.config/polybar: polybar
+    ~/.config/rofi: rofi
+    ~/.config/sxhkd: sxhkd
+    ~/.config/picom.conf: picom.conf
