@@ -11,7 +11,7 @@ then
 fi
 
 # Install required dependencies
-yay -S --needed bspwm picom rofi sxhkd dunst zsh xfce4-screensaver xfce4-notifyd xfce4-power-manager \
+yay -S --needed bspwm picom rofi sxhkd dunst zsh xfce4-screensaver xfce4-notifyd xfce4-power-manager unzip \
                 network-manager-applet flameshot ttf-jetbrains-mono-nerd pavucontrol brightnessctl blueman dotbot
 
 echo "Cloning submodules"
