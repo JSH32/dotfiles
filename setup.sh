@@ -14,13 +14,18 @@ fi
 
 # Install required dependencies
 yay -S --needed bspwm picom rofi sxhkd dunst zsh xfce4-screensaver xfce4-notifyd xfce4-power-manager unzip \
-                network-manager-applet flameshot ttf-jetbrains-mono-nerd pavucontrol brightnessctl blueman dotbot
+                network-manager-applet flameshot ttf-jetbrains-mono ttf-jetbrains-mono-nerd pavucontrol \
+                brightnessctl blueman bluez-utils bluez polybar dotbot alacritty slick-greeter lightdm exa bat
+
+echo "Enabling services"
+sudo systemctl enable --now bluetooth
+sudo systemctl enable lightdm -f
 
 echo "Cloning submodules"
 git submodule update --init --recursive
 
 echo "Making zsh the default shell"
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 
 if ! command -v oh-my-posh &> /dev/null
 then

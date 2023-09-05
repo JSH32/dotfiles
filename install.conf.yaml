@@ -10,8 +10,10 @@
     ~/.config/dunst: dunst
     ~/.config/gtk-3.0: gtk-3.0
     ~/.config/polybar: polybar
+    ~/.config/alacritty: alacritty
     ~/.config/rofi: rofi
     ~/.config/sxhkd: sxhkd
     ~/.config/picom.conf: picom.conf
     ~/.config/zsh: zsh
     ~/.zshrc: .zshrc
+
