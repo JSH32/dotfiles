@@ -15,8 +15,8 @@ fi
 # Install required dependencies
 yay -S --needed bspwm picom rofi sxhkd dunst zsh xfce4-screensaver xfce4-notifyd xfce4-power-manager unzip \
                 network-manager-applet flameshot ttf-jetbrains-mono ttf-jetbrains-mono-nerd pavucontrol \
-                brightnessctl blueman bluez-utils bluez polybar dotbot alacritty slick-greeter lightdm exa bat \
-                papirus-icon-theme jq wget dex nitrogen polkit arandr
+                brightnessctl blueman bluez-utils bluez polybar dotbot alacritty lightdm-gtk-greeter lightdm exa bat \
+                papirus-icon-theme jq wget dex nitrogen polkit arandr accountsservice
 
 echo "Enabling services"
 sudo systemctl enable --now bluetooth
@@ -44,5 +44,8 @@ rm Otis-forest.tar.xz Qogir-Dark.tar.xz
 
 echo "Copying autostart"
 sudo cp -rf ./autostart/* /etc/xdg/autostart
+
+# lightdm-slick-greeter is broken for some reason. Doesn't seem to allow logins.
+# sudo sed -i 's/^.*greeter-session=.*$/greeter-session=lightdm-slick-greeter/' /etc/lightdm/lightdm.conf
 
 dotbot -c ./install.conf.yaml
