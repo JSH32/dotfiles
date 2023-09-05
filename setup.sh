@@ -16,7 +16,7 @@ fi
 yay -S --needed bspwm picom rofi sxhkd dunst zsh xfce4-screensaver xfce4-notifyd xfce4-power-manager unzip \
                 network-manager-applet flameshot ttf-jetbrains-mono ttf-jetbrains-mono-nerd pavucontrol \
                 brightnessctl blueman bluez-utils bluez polybar dotbot alacritty slick-greeter lightdm exa bat \
-                papirus-icon-theme jq wget
+                papirus-icon-theme jq wget dex
 
 echo "Enabling services"
 sudo systemctl enable --now bluetooth
