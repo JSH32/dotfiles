@@ -13,3 +13,5 @@
     ~/.config/rofi: rofi
     ~/.config/sxhkd: sxhkd
     ~/.config/picom.conf: picom.conf
+    ~/.config/zsh: zsh
+    ~/.zshrc: .zshrc
