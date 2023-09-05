@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ ! -f "/etc/arch-release" ]; then
   echo "This script only works on Arch derivatives"
   exit 1
@@ -7,7 +9,7 @@ fi
 if ! command -v yay &> /dev/null
 then
     echo "Installing yay"
-    pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+    sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 fi
 
 # Install required dependencies
