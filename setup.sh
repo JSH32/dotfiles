@@ -15,7 +15,8 @@ fi
 # Install required dependencies
 yay -S --needed bspwm picom rofi sxhkd dunst zsh xfce4-screensaver xfce4-notifyd xfce4-power-manager unzip \
                 network-manager-applet flameshot ttf-jetbrains-mono ttf-jetbrains-mono-nerd pavucontrol \
-                brightnessctl blueman bluez-utils bluez polybar dotbot alacritty slick-greeter lightdm exa bat
+                brightnessctl blueman bluez-utils bluez polybar dotbot alacritty slick-greeter lightdm exa bat \
+                papirus-icon-theme
 
 echo "Enabling services"
 sudo systemctl enable --now bluetooth
@@ -32,5 +33,13 @@ then
   echo "Installing Oh-My-Posh"
   curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 fi
+
+echo "Installing GTK themes"
+curl -Lfs https://www.gnome-look.org/p/1619506/loadFiles | jq -r '.files | map(select(.name == "Otis-forest.tar.xz")) | first.url' | perl -pe 's/\%(\w\w)/chr hex $1/ge' | xargs wget
+curl -Lfs https://www.gnome-look.org/p/1230631/loadFiles | jq -r '.files | map(select(.name == "Qogir-Dark.tar.xz")) | first.url' | perl -pe 's/\%(\w\w)/chr hex $1/ge' | xargs wget
+
+sudo tar xf Otis-forest.tar.xz -C /usr/share/themes
+sudo tar xf Qogir-Dark.tar.xz -C /usr/share/themes
+rm Otis-forest.tar.xz Qogir-Dark.tar.xz
 
 dotbot -c ./install.conf.yaml
