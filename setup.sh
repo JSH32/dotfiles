@@ -43,6 +43,6 @@ sudo tar xf Qogir-Dark.tar.xz -C /usr/share/themes
 rm Otis-forest.tar.xz Qogir-Dark.tar.xz
 
 echo "Copying autostart"
-sudo cp -rf ./autostart /etc/xdg/autostart
+sudo cp -rf ./autostart/* /etc/xdg/autostart
 
 dotbot -c ./install.conf.yaml
