@@ -35,8 +35,7 @@ sh ~/.screenlayout/monitor.sh &
 nitrogen --restore &
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
-# Picom
-# picom -b &
+
 # Network Applet
 nm-applet --indicator &
 
