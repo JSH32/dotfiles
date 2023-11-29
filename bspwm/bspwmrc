@@ -33,11 +33,12 @@ sh ~/.screenlayout/monitor.sh &
 
 # Wallpaper
 nitrogen --restore &
+
+# Kill old firewall applet
+killall firewall-applet
+
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
-
-# Network Applet
-nm-applet --indicator &
 
 # Cursor
 xsetroot -cursor_name left_ptr &
